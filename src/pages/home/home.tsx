@@ -1,7 +1,7 @@
-import Welcome from "@components/welcome/welcome";
+import SecondaryHeader from "@components/secondaryHeader/secondaryHeader";
 
 function Home() {
-  return <Welcome />;
+  return <SecondaryHeader />;
 }
 
 export default Home;

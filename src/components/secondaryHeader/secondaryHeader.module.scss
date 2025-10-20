@@ -1,0 +1,34 @@
+﻿@use "@styles/_variables.scss" as *;
+@use "@styles/_mixins.scss" as *;
+
+.secondaryHeader {
+    background-color: #4b00b3;
+    color: $white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    font-size: $font-base;
+    font-family: $primary-font;
+
+    .left {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
