@@ -23,13 +23,13 @@ function PrimaryHeader() {
 
                 {/* Logo */}
                 <div className={styles.logo}>
-                    <img src="/rezilla-logo.svg" />
+                    <img src="/rezilla-logo.svg" alt="Rezilla logo"/>
                     <span>Rezilla</span>
                 </div>
 
                 {/* Right Menu */}
                 <div className={styles.navRight}>
-                    <a href="#" className={styles.login}>
+                    <a href="/login" className={styles.login}>
                         <FaRegUserCircle size={24} color="black" />
                         Login/Register
                     </a>
@@ -56,9 +56,13 @@ function PrimaryHeader() {
             {/* Mobile Menu */}
             <nav
                 className={`${styles.mobileMenu} ${menuOpen ? styles.active : ""}`}>
-                <div className={styles.closeButton} onClick={() => setMenuOpen(false)}>
+                <button
+                    className={styles.closeButton}
+                    onClick={() => setMenuOpen(false)}
+                    aria-label="Close menu"
+                >
                     ✕
-                </div>
+                </button>
                 <ul>
                     <li><NavLink to="/">Home</NavLink></li>
                     <li><NavLink to="/about">About</NavLink></li>
