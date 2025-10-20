@@ -2,7 +2,7 @@
 @use "@styles/_mixins.scss" as *;
 
 .secondaryHeader {
-    background-color: #4b00b3;
+    background-color: $base-color;
     color: $white;
     display: flex;
     justify-content: space-between;
@@ -24,7 +24,7 @@
     }
 
     a {
-        color: white;
+        color: $white;
         text-decoration: none;
 
         &:hover {

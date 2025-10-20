@@ -12,7 +12,7 @@ function SecondaryHeader() {
             </div>
             <div className={styles.right}>
                 <AiOutlinePhone size={24} />
-                <span>+1 206-214-2298</span>
+                <a href="tel: +1 206-214-2298">+1 206-214-2298</a>
                 <IoMailOutline size={24} />
                 <a href="mailto:info@example.com">support@rezilla.com</a>
             </div>
