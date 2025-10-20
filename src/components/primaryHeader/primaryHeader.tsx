@@ -2,6 +2,7 @@
 import {FaRegUserCircle} from "react-icons/fa";
 import { TbHomeCheck } from "react-icons/tb";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 function PrimaryHeader() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -9,24 +10,24 @@ function PrimaryHeader() {
     return (
         <header>
             <div className={styles.primaryHeader}>
-                {/* Sol Menü */}
+                {/* Left Menu */}
                 <nav className={styles.navLeft}>
                     <ul>
-                        <li className={styles.active}>Home</li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Listings</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Blogs</a></li>
+                        <li><NavLink to="/">Home</NavLink></li>
+                        <li><NavLink to="/about">About</NavLink></li>
+                        <li><NavLink to="/listings">Listings</NavLink></li>
+                        <li><NavLink to="/services">Services</NavLink></li>
+                        <li><NavLink to="/blogs">Blogs</NavLink></li>
                     </ul>
                 </nav>
 
-                {/* Orta */}
+                {/* Logo */}
                 <div className={styles.logo}>
                     <img src="/rezilla-logo.svg" />
                     <span>Rezilla</span>
                 </div>
 
-                {/* Sağ Menü */}
+                {/* Right Menu */}
                 <div className={styles.navRight}>
                     <a href="#" className={styles.login}>
                         <FaRegUserCircle size={24} color="black" />
@@ -39,28 +40,31 @@ function PrimaryHeader() {
                 </div>
 
                 {/* Hamburger */}
-                <div
+                <button
                     className={styles.hamburger}
                     onClick={() => setMenuOpen(!menuOpen)}
+                    aria-expanded={menuOpen}
+                    aria-controls="primary-navigation"
+                    aria-label="Toggle menu"
                 >
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
+                </button>
             </div>
 
-            {/* Mobil Menü */}
+            {/* Mobile Menu */}
             <nav
                 className={`${styles.mobileMenu} ${menuOpen ? styles.active : ""}`}>
                 <div className={styles.closeButton} onClick={() => setMenuOpen(false)}>
                     ✕
                 </div>
                 <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Listings</li>
-                    <li>Services</li>
-                    <li>Blogs</li>
+                    <li><NavLink to="/">Home</NavLink></li>
+                    <li><NavLink to="/about">About</NavLink></li>
+                    <li><NavLink to="/listings">Listings</NavLink></li>
+                    <li><NavLink to="/services">Services</NavLink></li>
+                    <li><NavLink to="/blogs">Blogs</NavLink></li>
                     <a href="/login" className={styles.login}>
                         <FaRegUserCircle size={24} color="black" /> Login/Register
                     </a>
