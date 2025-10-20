@@ -1,0 +1,205 @@
+﻿@use "@styles/_variables.scss" as *;
+@use "@styles/_mixins.scss" as *;
+
+.primaryHeader {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    padding: 1rem 3rem;
+    background-color: #fff;
+    font-family: $primary-font;
+    font-size: $font-base;
+
+    @media (max-width: $tablet-m) {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 1.5rem;
+    }
+}
+
+/* Sol Menü */
+.navLeft ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @media (max-width: $tablet-m) {
+        display: none;
+    }
+}
+
+.navLeft li {
+    font-weight: $font-regular;
+    color: #222;
+    cursor: pointer;
+    transition: 0.3s ease;
+    padding: 0.4rem 0.9rem;
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+}
+
+.navLeft li:hover,
+.navLeft .active {
+    background-color: #e0e3ff;
+    border-radius: 2rem;
+}
+
+/* Orta */
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: $font-base;
+    font-weight: $font-regular;
+
+    span {
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    @media (max-width: $tablet-m) {
+        justify-content: flex-start;
+    }
+}
+
+/* Sağ Menü */
+.navRight {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.5rem;
+
+    @media (max-width: $tablet-m) {
+        display: none;
+    }
+
+    .login {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #222;
+        text-decoration: none;
+        font-weight: $font-regular;
+
+        &:hover {
+            color: #4b00b3;
+        }
+    }
+
+    .addListing {
+        background-color: #4b00b3;
+        color: white;
+        border: none;
+        padding: 0.8rem 1.6rem;
+        border-radius: 2rem;
+        font-weight: $font-regular;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        transition: 0.3s ease;
+
+        &:hover {
+            background-color: #3a0093;
+        }
+    }
+}
+
+/* Hamburger Menü */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+
+    span {
+        width: 25px;
+        height: 3px;
+        background-color: #222;
+        border-radius: 2px;
+    }
+
+    @media (max-width: $tablet-m) {
+        display: flex;
+    }
+}
+
+/* Mobil menü */
+.mobileMenu {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+
+    li {
+        padding: 1rem 2rem;
+        color: #222;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #f2f2f2;
+        }
+    }
+
+    &.active {
+        display: flex;
+    }
+
+    .closeButton {
+        align-self: flex-end;
+        padding: 0.5rem 1.5rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #222;
+        transition: 0.3s;
+
+        &:hover {
+            color: #4b00b3;
+        }
+    }
+
+    .login {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #222;
+        text-decoration: none;
+        font-weight: $font-regular;
+        padding: 1rem 2rem;
+
+        &:hover {
+            color: #4b00b3;
+            background-color: #f2f2f2;
+        }
+    }
+
+    .addListing {
+        background-color: #4b00b3;
+        color: white;
+        border: none;
+        padding: 0.8rem 1.6rem;
+        border-radius: 2rem;
+        font-weight: $font-regular;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        transition: 0.3s ease;
+        justify-content: center;
+        margin: 0.5rem 2rem;
+
+        &:hover {
+            background-color: #3a0093;
+        }
+    }
+}
