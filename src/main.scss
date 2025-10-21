@@ -1,1 +1,15 @@
 @use "./styles/reset" as *;
+
+html, body, #root {
+  height: 100%;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#app-content {
+  flex: 1;
+}
