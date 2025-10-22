@@ -1,8 +1,29 @@
+import { useState } from "react";
+import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 import styles from "./HeroLeft.module.scss";
-import { FaChevronRight } from "react-icons/fa";
-import { FaChevronLeft } from "react-icons/fa";
 
 function HeroLeft() {
+    const images = [
+        "/home/bedroom.jpg",
+        "/home/bedroom-2.jpg",
+        "/home/bedroom-3.jpg",
+        "/home/bedroom-4.jpg",
+    ];
+
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const prevSlide = () => {
+        setCurrentIndex((prevIndex) =>
+            prevIndex === 0 ? images.length - 1 : prevIndex - 1
+        );
+    };
+
+    const nextSlide = () => {
+        setCurrentIndex((prevIndex) =>
+            prevIndex === images.length - 1 ? 0 : prevIndex + 1
+        );
+    };
+
     return (
         <section className={styles.heroLeft}>
             <div className={styles.textContent}>
@@ -17,27 +38,41 @@ function HeroLeft() {
             </div>
 
             <div className={styles.imageWrapper}>
-                <button className={`${styles.navBtn} ${styles.prev}`}>
+                <button
+                    className={`${styles.navBtn} ${styles.prev}`}
+                    onClick={prevSlide}
+                    aria-label="Previous slide"
+                >
                     <FaChevronLeft size={20} />
                 </button>
+
                 <img
-                    src="/bedroom.jpg"
-                    alt="Modern bedroom"
+                    src={images[currentIndex]}
+                    alt={`Slide ${currentIndex + 1}`}
                     className={styles.heroImage}
                 />
-                <button className={`${styles.navBtn} ${styles.next}`}>
+
+                <button
+                    className={`${styles.navBtn} ${styles.next}`}
+                    onClick={nextSlide}
+                    aria-label="Next slide"
+                >
                     <FaChevronRight size={20} />
                 </button>
 
                 <div className={styles.sliderDots}>
-                    <span className={styles.active}></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    {images.map((_, index) => (
+                        <span
+                            key={index}
+                            className={index === currentIndex ? styles.active : ""}
+                            onClick={() => setCurrentIndex(index)}
+                            role="button"
+                            aria-label={`Go to slide ${index + 1}`}
+                            tabIndex={0}
+                        ></span>
+                    ))}
                 </div>
             </div>
-
-
         </section>
     );
 }
