@@ -1,0 +1,117 @@
+@use "@styles/_variables.scss" as *;
+@use "@styles/_mixins.scss" as *;
+
+.heroLeft {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 4rem 3rem;
+    font-family: $primary-font;
+    position: relative;
+
+    .textContent {
+        max-width: 550px;
+
+        .subTitle {
+            color: $text-color2;
+            font-weight: $font-regular;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 1rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: $black;
+            margin: 1rem 0;
+            line-height: 1.2;
+        }
+
+        p {
+            font-size: $font-base;
+            color: $text-color;
+            line-height: 1.6;
+            margin-top: 0.5rem;
+        }
+    }
+
+    .imageWrapper {
+        position: relative;
+        display: inline-block;
+
+        .heroImage {
+            width: 100%;
+            max-width: 650px;
+            height: auto;
+            border-radius: 1rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .navBtn {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            line-height: 1;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: $white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: $text-color;
+
+            &.prev {
+                left: -20px;
+            }
+
+            &.next {
+                right: -20px;
+            }
+
+            &:hover {
+                background-color: $white;
+                color: $black;
+            }
+        }
+
+        .sliderDots {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+
+            span {
+                width: 100px;
+                height: 4px;
+                border-radius: 2px;
+                background-color: #ddd;
+
+                &.active {
+                    background-color: $text-color2;
+                }
+            }
+        }
+    }
+
+
+    @media (max-width: $tablet-m) {
+        padding: 2rem;
+
+        .textContent h1 {
+            font-size: 2rem;
+        }
+
+        .heroImage {
+            max-width: 100%;
+        }
+    }
+}
