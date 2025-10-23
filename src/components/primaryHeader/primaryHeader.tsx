@@ -30,10 +30,10 @@ function PrimaryHeader() {
                         <FaRegUserCircle size={24} color="black" />
                         Login/Register
                     </NavLink>
-                    <button className={styles.addListing}>
+                    <NavLink to="/add-listing" className={styles.addListing}>
                         <TbHomeCheck size={24} />
                         Add Listing
-                    </button>
+                    </NavLink>
                 </div>
             </div>
         </header>
