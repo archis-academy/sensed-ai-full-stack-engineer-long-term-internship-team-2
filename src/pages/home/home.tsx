@@ -1,7 +1,11 @@
-import PrimaryHeader from "@components/primaryHeader/primaryHeader";
+import HeroLeft from "@pages/home/heroLeft";
 
 function Home() {
-    return <PrimaryHeader />;
+    return (
+        <>
+            <HeroLeft />
+        </>
+    );
 }
 
 export default Home;
