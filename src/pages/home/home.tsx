@@ -1,7 +1,11 @@
-import Welcome from "@components/welcome/welcome";
+import HeroLeft from "@pages/home/heroLeft";
 
 function Home() {
-  return <Welcome />;
+    return (
+        <>
+            <HeroLeft />
+        </>
+    );
 }
 
 export default Home;

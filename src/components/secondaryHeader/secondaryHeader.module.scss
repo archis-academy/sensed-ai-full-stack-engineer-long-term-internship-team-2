@@ -1,0 +1,41 @@
+﻿@use "@styles/_variables.scss" as *;
+@use "@styles/_mixins.scss" as *;
+
+.secondaryHeader {
+    background-color: $base-color;
+    color: $white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    font-size: $font-base;
+    font-family: $primary-font;
+
+    .left {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: $white;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    @media (max-width: $tablet-m) {
+        padding: 1rem 1.5rem;
+    }
+}
