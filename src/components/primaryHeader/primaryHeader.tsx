@@ -69,12 +69,16 @@ function PrimaryHeader() {
                     <li><NavLink to="/listings">Listings</NavLink></li>
                     <li><NavLink to="/services">Services</NavLink></li>
                     <li><NavLink to="/blogs">Blogs</NavLink></li>
-                    <a href="/login" className={styles.login}>
-                        <FaRegUserCircle size={24} color="black" /> Login/Register
-                    </a>
-                    <button className={styles.addListing}>
-                        <TbHomeCheck size={24} /> Add Listing
-                    </button>
+                    <li>
+                        <a href="/login" className={styles.login}>
+                            <FaRegUserCircle size={24} color="black" /> Login/Register
+                        </a>
+                    </li>
+                    <li>
+                        <button className={styles.addListing}>
+                            <TbHomeCheck size={24} /> Add Listing
+                        </button>
+                    </li>
                 </ul>
             </nav>
         </header>
