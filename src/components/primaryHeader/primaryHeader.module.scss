@@ -8,12 +8,6 @@
     background-color: $white;
     font-family: $primary-font;
     font-size: $font-base;
-
-    @media (max-width: $tablet-m) {
-        display: flex;
-        justify-content: space-between;
-        padding: 1rem 1.5rem;
-    }
 }
 
 /* Left Menu */
@@ -23,10 +17,6 @@
     list-style: none;
     margin: 0;
     padding: 0;
-
-    @media (max-width: $tablet-m) {
-        display: none;
-    }
 }
 
 .navLeft li {
@@ -56,14 +46,12 @@
     gap: 0.6rem;
     font-size: $font-base;
     font-weight: $font-regular;
+    text-decoration: none;
 
     span {
         font-size: 24px;
         font-weight: 600;
-    }
-
-    @media (max-width: $tablet-m) {
-        justify-content: flex-start;
+        color: $black;
     }
 }
 
@@ -74,10 +62,6 @@
     align-items: center;
     gap: 1.5rem;
 
-    @media (max-width: $tablet-m) {
-        display: none;
-    }
-
     .login {
         display: flex;
         align-items: center;
@@ -87,12 +71,12 @@
         font-weight: $font-regular;
 
         &:hover {
-            color: #4b00b3;
+            color: $base-color;
         }
     }
 
     .addListing {
-        background-color: #4b00b3;
+        background-color: $base-color;
         color: white;
         border: none;
         padding: 0.8rem 1.6rem;
@@ -110,99 +94,30 @@
     }
 }
 
-/* Hamburger */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-
-    span {
-        width: 25px;
-        height: 3px;
-        background-color: #222;
-        border-radius: 2px;
-    }
-
-    @media (max-width: $tablet-m) {
-        display: flex;
-    }
-}
-
-/* Mobile Menu */
-.mobileMenu {
-    display: none;
-    flex-direction: column;
-    background-color: #fff;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    padding: 1rem 0;
-
-    li {
+@media (max-width: $desktop-s) {
+    .primaryHeader {
         padding: 1rem 2rem;
-        cursor: pointer;
-
-        a {
-            text-decoration: none;
-            color: black;
-            display: block;
-
-            &:hover {
-                color: #4b00b3;
-            }
-        }
+        grid-template-columns: 1fr 2fr 1fr;
     }
 
-    &.active {
-        display: flex;
-    }
-
-    .closeButton {
-        align-self: flex-end;
-        padding: 0.5rem 1.5rem;
-        font-size: 1.5rem;
-        cursor: pointer;
-        color: #222;
-        transition: 0.3s;
-
-        &:hover {
-            color: #4b00b3;
-        }
-    }
-
-    .login {
-        display: flex;
-        align-items: center;
+    .navLeft ul {
         gap: 0.5rem;
-        color: #222;
-        text-decoration: none;
-        font-weight: $font-regular;
-        padding: 1rem 2rem;
+    }
 
-        &:hover {
-            color: #4b00b3;
+    .navRight {
+        gap: 1rem;
+
+        .login {
+            font-size: 0.9rem;
+        }
+
+        .addListing {
+            padding: 0.6rem 1.2rem;
+            font-size: 0.9rem;
         }
     }
 
-    .addListing {
-        background-color: #4b00b3;
-        color: white;
-        border: none;
-        padding: 0.8rem 1.6rem;
-        border-radius: 2rem;
-        font-weight: $font-regular;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        cursor: pointer;
-        transition: 0.3s ease;
-        justify-content: center;
-        margin: 0.5rem 2rem;
-
-        &:hover {
-            background-color: #3a0093;
-        }
+    .logo span {
+        font-size: 20px;
     }
 }
