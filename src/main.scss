@@ -1,1 +1,92 @@
-@use "./styles/reset" as *;
+/* ==========================================================================
+   Main SCSS Entry Point
+   ========================================================================== */
+
+// 1. Reset ve Fonksiyonları (varsa) import et
+@use 'styles/reset';
+@use 'styles/functions' as *; // Henüz yoksa bile yapı için iyi
+
+// 2. Değişkenleri ve Mixin'leri import et
+// Not: Değişkenler her zaman önce gelmeli
+@use 'styles/variables' as *;
+@use 'styles/mixins' as *;
+
+/* ==========================================================================
+   Global Base Styles
+   ========================================================================== */
+
+html {
+  font-size: $font-size-root; // 16px
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-family-base;
+  font-weight: $font-weight-regular;
+  color: $color-text-body; // Varsayılan metin rengi
+  background-color: $color-bg;
+  line-height: 1.6;
+}
+
+// Başlık stilleri
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $font-weight-semibold;
+  color: $color-text-heading; // Başlıklar için varsayılan renk
+  line-height: 1.3;
+}
+
+a {
+  color: $color-primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* ==========================================================================
+   Reusable UI Elements (Buttons)
+   ========================================================================== */
+
+// Temel buton sınıfı (sadece mixin'i uygular)
+.btn {
+  @include button-base;
+}
+
+// 1. Primary Button (Görseldeki "Search", "Contact Now" butonları)
+// Kullanım: <button class="btn btn-primary">Search</button>
+.btn-primary {
+  @extend .btn; // .btn'in tüm stillerini miras al
+  background-color: $color-primary;
+  color: $color-white;
+
+  &:hover:not(:disabled) {
+    background-color: $color-primary-dark;
+    box-shadow: 0 4px 15px rgba($color-primary, 0.3);
+    transform: translateY(-2px);
+  }
+
+  &:focus-visible {
+    outline-color: $color-primary-dark;
+  }
+}
+
+// 2. Secondary Button (Görseldeki "Become an Agent" butonu)
+// Kullanım: <button class="btn btn-secondary">Become an Agent</button>
+.btn-secondary {
+  @extend .btn; // .btn'in tüm stillerini miras al
+  background-color: $color-white;
+  color: $color-primary;
+  border: 1px solid $color-border; // Nötr bir border
+
+  &:hover:not(:disabled) {
+    border-color: $color-primary;
+    color: $color-primary-dark;
+    background-color: $color-primary-light; // Hafif vurgu
+    transform: translateY(-2px);
+  }
+
+  &:focus-visible {
+    border-color: $color-primary;
+  }
+}

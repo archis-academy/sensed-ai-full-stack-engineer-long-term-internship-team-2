@@ -1,43 +1,80 @@
-@use "@styles/_functions.scss" as *;
+/* ==========================================================================
+   1. Colors
+   ========================================================================== */
 
-/*
- * Colors
- *
- * configure the colors required for the project here
- * */
-$white: #ffffff;
-$black: #000000;
-$base-color: #4b00b3;
-$text-color: #666;
-$text-color2: #0843FF;
+// Ana Renk Paleti (Kullanıcı tarafından sağlanan palet)
+$color-primary: #4B0DAF; // Ana mor (butonlar, footer, vurgular)
+$color-primary-dark: #3C0A8C; // Hover için (SASS: darken($color-primary, 8%))
+$color-primary-light: #F0E6FF; // Açık mor arka planlar
 
-/*
- * Typography and font sizes
- *
- * configure the typography and font sizes required for the project here
- * */
+// Nötr Renkler
+$color-white: #FFFFFF;
+$color-black: #1A1A1A;
+$color-bg: #FFFFFF; // Ana sayfa arka planı
+$color-bg-light-gray: #F7F7F7; // Bölüm arka planları
 
-// font familly
-$primary-font: "Inter", sans-serif;
+// Metin Renkleri
+$color-text-heading: #2D3954; // Ana başlıklar
+$color-text-body: #6C727F; // Gövde metni, açıklamalar
+$color-text-placeholder: #9CA3AF; // Input placeholder
 
-//font-sizes
-$font-base: pxToRem(16);
+// UI Elementleri
+$color-border: #E5E7EB; // Kenar çizgileri
 
-//font-weight
-$font-regular: 400;
+// Aksan Renkleri
+$color-accent-orange: #FF5A5F; // "For Rent" etiketleri
+$color-accent-light-blue: #E8F0FE; // İkon arka planları
 
-/*
- * Screen Breakpoints
- * */
+// Durum Renkleri (Success, Info, Warning)
+$color-success: #10B981;
+$color-info: #3B82F6;
+$color-warning: #F59E0B;
 
-$desktop-xxl: pxToRem(1920);
-$desktop-xl: pxToRem(1600);
-$desktop-l: pxToRem(1440);
-$desktop-m: pxToRem(1200);
-$desktop-s: pxToRem(1024);
-$tablet-l: pxToRem(992);
-$tablet-m: pxToRem(768);
-$tablet-s: pxToRem(640);
-$mobile-l: pxToRem(576);
-$mobile-m: pxTotRem(480);
-$mobile-s: pxToRem(320);
+/* ==========================================================================
+   2. Typography
+   ========================================================================== */
+
+// Font Ailesi (Kullanıcı listesinden 'Poppins' seçildi,
+// görselle uyumlu ve modern bir seçim)
+$font-family-base: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+  Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+// Base font size (HTML root için)
+$font-size-root: 16px;
+
+// Font Ağırlıkları
+$font-weight-regular: 400;
+$font-weight-medium: 500; // Gövde metni (Medium) ve Butonlar
+$font-weight-semibold: 600; // Başlıklar
+$font-weight-bold: 700;
+
+/* ==========================================================================
+   3. Breakpoints (Responsive)
+   ========================================================================== */
+
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;
+
+/* ==========================================================================
+   4. UI Değişkenleri (Spacing, Radius vb.)
+   ========================================================================== */
+
+// Border Radius
+$border-radius-sm: 4px;
+$border-radius-md: 8px; // Butonlar, inputlar
+$border-radius-lg: 16px; // Kartlar
+$border-radius-xl: 24px;
+$border-radius-pill: 50rem;
+
+// Gölgeler (Kullanıcı tarafından sağlanan gölge rengiyle)
+$box-shadow-soft: 0px 10px 30px rgba(0, 0, 0, 0.08);
+
+// Buton Padding
+$button-padding-y: 14px;
+$button-padding-x: 24px;
+
+// Geçişler
+$transition-base: all 0.3s ease-in-out;
