@@ -21,9 +21,9 @@
 
 .navLeft li {
     font-weight: $font-regular;
-    color: #222;
+    color: $header-text;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: none;
     padding: 0.4rem 0.9rem;
 
     a {
@@ -32,11 +32,17 @@
     }
 }
 
-.navLeft li:hover,
+.navLeft li a:hover,
+.navLeft li a:focus-visible,
 .navLeft .active {
-    background-color: #e0e3ff;
+    background-color: $header-box;
     border-radius: 2rem;
+    outline: none;
+    padding: 0.6rem 1.2rem;
+    box-shadow: 0 0 0 1px rgba(63, 81, 181, 0); // focus
+    transition: none;
 }
+
 
 /* Logo */
 .logo {
@@ -66,7 +72,7 @@
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        color: #222;
+        color: $header-text;
         text-decoration: none;
         font-weight: $font-regular;
 
@@ -86,11 +92,11 @@
         align-items: center;
         gap: 0.5rem;
         cursor: pointer;
-        transition: 0.3s ease;
+        transition: none;
         text-decoration: none;
 
         &:hover {
-            background-color: #3a0093;
+            background-color: $add-listing;
         }
     }
 }
