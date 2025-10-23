@@ -1,7 +1,11 @@
 import HeroLeft from "@pages/home/heroLeft";
 
 function Home() {
-  return <HeroLeft />;
+    return (
+        <>
+            <HeroLeft />
+        </>
+    );
 }
 
 export default Home;
