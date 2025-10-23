@@ -11,10 +11,8 @@ function SecondaryHeader() {
                 <span>Rezilla, 18 Grattan St, Brooklyn</span>
             </div>
             <div className={styles.right}>
-                <AiOutlinePhone size={24} />
-                <a href="tel: +1 206-214-2298">+1 206-214-2298</a>
-                <IoMailOutline size={24} />
-                <a href="mailto:support@rezilla.com">support@rezilla.com</a>
+                <a href="tel: +1 206-214-2298"><AiOutlinePhone size={24} />+1 206-214-2298</a>
+                <a href="mailto:support@rezilla.com"><IoMailOutline size={24} />support@rezilla.com</a>
             </div>
         </div>
     );
