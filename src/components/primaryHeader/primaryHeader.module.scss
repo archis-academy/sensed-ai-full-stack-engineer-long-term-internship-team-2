@@ -1,0 +1,130 @@
+﻿@use "@styles/_variables.scss" as *;
+
+.primaryHeader {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    padding: 1rem 3rem;
+    background-color: $white;
+    font-family: $primary-font;
+    font-size: $font-base;
+}
+
+/* Left Menu */
+.navLeft ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navLeft li {
+    font-weight: $font-regular;
+    color: $header-text;
+    cursor: pointer;
+    transition: none;
+    padding: 0.4rem 0.9rem;
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+}
+
+.navLeft li a:hover,
+.navLeft li a:focus-visible,
+.navLeft .active {
+    background-color: $header-box;
+    border-radius: 2rem;
+    outline: none;
+    padding: 0.6rem 1.2rem;
+    box-shadow: 0 0 0 1px rgba(63, 81, 181, 0); // focus
+    transition: none;
+}
+
+
+/* Logo */
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: $font-base;
+    font-weight: $font-regular;
+    text-decoration: none;
+
+    span {
+        font-size: 24px;
+        font-weight: 600;
+        color: $black;
+    }
+}
+
+/* Right Menu */
+.navRight {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.5rem;
+
+    .login {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: $header-text;
+        text-decoration: none;
+        font-weight: $font-regular;
+
+        &:hover {
+            color: $base-color;
+        }
+    }
+
+    .addListing {
+        background-color: $base-color;
+        color: white;
+        border: none;
+        padding: 0.8rem 1.6rem;
+        border-radius: 2rem;
+        font-weight: $font-regular;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        transition: none;
+        text-decoration: none;
+
+        &:hover {
+            background-color: $add-listing;
+        }
+    }
+}
+
+@media (max-width: $desktop-s) {
+    .primaryHeader {
+        padding: 1rem 2rem;
+        grid-template-columns: 1fr 2fr 1fr;
+    }
+
+    .navLeft ul {
+        gap: 0.5rem;
+    }
+
+    .navRight {
+        gap: 1rem;
+
+        .login {
+            font-size: 0.9rem;
+        }
+
+        .addListing {
+            padding: 0.6rem 1.2rem;
+            font-size: 0.9rem;
+        }
+    }
+
+    .logo span {
+        font-size: 20px;
+    }
+}
