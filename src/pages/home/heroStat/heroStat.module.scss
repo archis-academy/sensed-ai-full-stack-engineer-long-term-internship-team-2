@@ -1,0 +1,84 @@
+@use "@styles/_variables.scss" as *;
+
+.heroStat {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+    margin: 5rem auto 0;
+    font-family: $primary-font;
+    width: 100%;
+
+    .statCard {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.2rem;
+        background-color: $white;
+        padding: 1rem 1.2rem;
+        padding-right: 1rem;
+        border-radius: 2rem;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        flex: 1;
+        max-width: 300px;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .avatarGroup {
+            display: flex;
+            align-items: center;
+            position: relative;
+
+            img {
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                border: 2px solid $white;
+                object-fit: cover;
+                margin-left: -10px;
+            }
+
+            .more {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                background-color: $black;
+                color: $white;
+                font-weight: 600;
+                font-size: 1rem;
+                margin-left: -10px;
+                border: 2px solid $white;
+            }
+        }
+
+        .imageWrapper img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .textWrapper {
+
+            p {
+                color: $black;
+                font-size: 0.95rem;
+                margin: 0;
+            }
+        }
+    }
+
+    @media (max-width: $tablet-m) {
+        align-items: center;
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+}
