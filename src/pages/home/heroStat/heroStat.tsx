@@ -3,7 +3,7 @@ import styles from "./HeroStat.module.scss";
 function HeroStat() {
     return (
         <section className={styles.heroStat}>
-            {/* Sol kart — birden fazla kullan?c? resmi */}
+            {/* Left */}
             <div className={styles.statCard}>
                 <div className={styles.avatarGroup}>
                     <img src="/home/young.jpg" alt="User 1" />
@@ -16,7 +16,7 @@ function HeroStat() {
                 </div>
             </div>
 
-            {/* Sa? kart */}
+            {/* Right */}
             <div className={styles.statCard}>
                 <div className={styles.imageWrapper}>
                     <img src="/home/villa.jpg" alt="Listings" />
