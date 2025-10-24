@@ -1,130 +1,68 @@
-﻿@use "@styles/_variables.scss" as *;
-
-.primaryHeader {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    align-items: center;
-    padding: 1rem 3rem;
-    background-color: $white;
-    font-family: $primary-font;
-    font-size: $font-base;
+﻿.primaryHeader {
+  position: sticky; top: 0; z-index: 50;
+  background: #fff; border-bottom: 1px solid #eee;
 }
 
-/* Left Menu */
-.navLeft ul {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* brand | nav | actions */
+  align-items: center; gap: 1rem;
+  max-width: 1200px; margin: 0 auto; padding: .75rem 1rem;
 }
 
-.navLeft li {
-    font-weight: $font-regular;
-    color: $header-text;
-    cursor: pointer;
-    transition: none;
-    padding: 0.4rem 0.9rem;
+/* Brand */
+.brand { display: inline-flex; align-items: center; gap: .5rem; }
+.logo { width: 32px; height: 32px; display: inline-grid; place-items: center; background:#6c4df6; color:#fff; border-radius:9999px; }
+.brandText { font-weight: 700; font-size: 1.25rem; }
 
-    a {
-        color: inherit;
-        text-decoration: none;
-    }
+/* Nav desktop */
+.nav ul {
+  display: flex; gap: 1.25rem; justify-content: center;
 }
+.nav a { text-decoration: none; color: #222; }
+.nav a:hover { color: #6c4df6; }
 
-.navLeft li a:hover,
-.navLeft li a:focus-visible,
-.navLeft .active {
-    background-color: $header-box;
-    border-radius: 2rem;
-    outline: none;
-    padding: 0.6rem 1.2rem;
-    box-shadow: 0 0 0 1px rgba(63, 81, 181, 0); // focus
-    transition: none;
+/* Actions */
+.actions { display: flex; justify-content: flex-end; gap: .75rem; }
+.login { text-decoration: none; color: #222; }
+.addBtn { background:#6c4df6; color:#fff; border:0; padding:.5rem .9rem; border-radius:.5rem; cursor:pointer; }
+
+/* Hamburger default: gizli */
+.hamburger { display: none; position: relative; width: 40px; height: 40px; border: 0; background: transparent; justify-self: end; }
+.hamburger span { position: absolute; left: 8px; right: 8px; height: 2px; background:#222; border-radius: 2px; }
+.hamburger span:nth-child(1){ top:12px; }
+.hamburger span:nth-child(2){ top:19px; }
+.hamburger span:nth-child(3){ top:26px; }
+
+/* <= 992px: mobil davranış */
+@media (max-width: 992px) {
+  .container { grid-template-columns: auto 1fr auto; }
+  .hamburger { display: inline-block; }
+  .nav {
+    position: absolute; left: 0; right: 0; top: 60px;
+    background:#fff; border-bottom:1px solid #eee; display: none;
+  }
+  .nav ul { flex-direction: column; padding: .5rem 1rem; gap: .75rem; }
+  .open { display: block; }
+  .actions { display: none; } /* tasarıma göre sağdaki butonları gizle */
 }
+/* <= 640px: küçük telefon görünümü */
+@media (max-width: 640px) {
+  .container {
+    grid-template-columns: 1fr auto;
+    padding: 0.5rem;
+  }
 
+  .brandText {
+    font-size: 1rem;
+  }
 
-/* Logo */
-.logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.6rem;
-    font-size: $font-base;
-    font-weight: $font-regular;
-    text-decoration: none;
+  .nav ul {
+    padding: 0.5rem;
+  }
 
-    span {
-        font-size: 24px;
-        font-weight: 600;
-        color: $black;
-    }
-}
-
-/* Right Menu */
-.navRight {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 1.5rem;
-
-    .login {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        color: $header-text;
-        text-decoration: none;
-        font-weight: $font-regular;
-
-        &:hover {
-            color: $base-color;
-        }
-    }
-
-    .addListing {
-        background-color: $base-color;
-        color: white;
-        border: none;
-        padding: 0.8rem 1.6rem;
-        border-radius: 2rem;
-        font-weight: $font-regular;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        cursor: pointer;
-        transition: none;
-        text-decoration: none;
-
-        &:hover {
-            background-color: $add-listing;
-        }
-    }
-}
-
-@media (max-width: $desktop-s) {
-    .primaryHeader {
-        padding: 1rem 2rem;
-        grid-template-columns: 1fr 2fr 1fr;
-    }
-
-    .navLeft ul {
-        gap: 0.5rem;
-    }
-
-    .navRight {
-        gap: 1rem;
-
-        .login {
-            font-size: 0.9rem;
-        }
-
-        .addListing {
-            padding: 0.6rem 1.2rem;
-            font-size: 0.9rem;
-        }
-    }
-
-    .logo span {
-        font-size: 20px;
-    }
+  .hamburger {
+    top: 10px;
+    right: 10px;
+  }
 }
