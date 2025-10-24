@@ -9,11 +9,9 @@
         padding: 116px 72px;
         position: relative;
         overflow: visible;
-        // Arka plan degrade + alt köşeleri yuvarlak
         background: linear-gradient(to bottom, #ffffff 0%, #4CC9F000 10%, #4361EE4D 100%);
         border-bottom-left-radius: 800px;
         border-bottom-right-radius: 800px;
-        // İsteğe bağlı: sayfayı ortalamak istersen
         margin: 0 auto;
 
         .heroLeft,
@@ -22,7 +20,7 @@
             position: relative;
             z-index: 1;
         }
-        // Üst kısımdaki beyaz parıltıyı daha yumuşak göstermek için
+
         &::before {
             content: "";
             position: absolute;
