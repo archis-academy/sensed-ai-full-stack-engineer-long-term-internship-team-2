@@ -1,5 +1,6 @@
 import HeroLeft from "@pages/home/heroLeft/heroLeft";
 import HeroRight from "@pages/home/heroRight/heroRight";
+import HeroStat from "@pages/home/heroStat/heroStat";
 import styles from "./Home.module.scss";
 
 function Home() {
@@ -10,6 +11,7 @@ function Home() {
                     <HeroLeft />
                     <HeroRight />
                 </div>
+                <HeroStat />
             </section>
         </>
     );
