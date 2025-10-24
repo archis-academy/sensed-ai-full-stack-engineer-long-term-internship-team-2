@@ -1,21 +1,44 @@
-@use "@styles/_variables.scss" as *;
+﻿@use "@styles/_variables.scss" as *;
 
 .home {
-    position: relative;
-    overflow: hidden;
-    padding: 4rem 0;
 
     .heroContainer {
         display: flex;
-        align-items: stretch;
         justify-content: space-between;
-        padding: 0 4rem;
-        gap: 2rem;
+        align-items: center;
+        padding: 116px 72px;
+        position: relative;
+        overflow: visible;
+        background: linear-gradient(to bottom, #ffffff 0%, #4CC9F000 10%, #4361EE4D 100%);
+        border-bottom-left-radius: 800px;
+        border-bottom-right-radius: 800px;
+        margin: 0 auto;
+
+        .heroLeft,
+        .heroRight,
+        .heroStat {
+            position: relative;
+            z-index: 1;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 40%;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), transparent);
+            z-index: 0;
+        }
 
         @media (max-width: $tablet-m) {
+            width: 100%;
+            height: auto;
             flex-direction: column;
-            align-items: center;
-            gap: 2rem;
+            border-bottom-left-radius: 400px;
+            border-bottom-right-radius: 400px;
+            padding: 2rem;
         }
     }
 }
