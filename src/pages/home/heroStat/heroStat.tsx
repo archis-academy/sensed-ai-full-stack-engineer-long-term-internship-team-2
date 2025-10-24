@@ -1,4 +1,4 @@
-import styles from "./HeroStat.module.scss";
+import styles from "./heroStat.module.scss";
 
 function HeroStat() {
     return (
